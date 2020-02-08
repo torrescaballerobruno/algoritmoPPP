@@ -12,7 +12,6 @@ import CryptoKit
 class SettingsViewController: UIViewController {
 
     @IBOutlet weak var keyTF: UITextField!
-    @IBOutlet weak var tarjetasL: UILabel!
     @IBOutlet weak var columnasL: UILabel!
     @IBOutlet weak var filasL: UILabel!
     public var viewController: ViewController!
@@ -21,7 +20,6 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tarjetasL.text = "1"
         columnasL.text = "1"
         filasL.text = "1"
         
@@ -40,14 +38,14 @@ class SettingsViewController: UIViewController {
     @IBAction func aceptar(_ sender: UIButton) {
         if let texto = keyTF.text {
             viewController?.tarjetas = cardGenerator.createCards(key: texto)
+            viewController?.rows = Int(filasL.text!)!
+            viewController?.columns = Int(columnasL.text!)!
             viewController.collectionView.reloadData()
+            viewController.cont = 0
+            viewController.cardCounter = 0
             defaults.set(texto, forKey: "key")
             dismiss(animated: true, completion: nil)
         }
-    }
-
-    @IBAction func tarjetasS(_ sender: UIStepper) {
-        tarjetasL.text = Int(sender.value).description
     }
 
     @IBAction func ColumnasS(_ sender: UIStepper) {

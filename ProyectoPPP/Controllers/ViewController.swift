@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate{
+class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var selectedCard: UILabel!
@@ -17,7 +17,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     var cardCounter: Int = 0
     
     var tarjetas: [String]?
-    
+    var rows: Int = 1
+    var columns: Int = 1
+    var cont = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,34 +38,37 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
     }
     
-    @IBAction func save(_ sender: UIButton) {
-        for x in tarjetas! {
-            print(x)
-        }
-    }
-    
     @IBAction func selectACard(_ sender: UIButton){
-        if tarjetas!.count > cardCounter, let card = tarjetas?[cardCounter]{
+        if tarjetas!.count > cardCounter, cardCounter < cont , let card = tarjetas?[cardCounter]{
             cardCounter += 1
             selectedCard.text = card
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if let count = tarjetas?.count{
+        if (tarjetas?.count) != nil {
             selectedCard.isHidden = false
             selectCardBtn.isHidden = false
-            return count
+            return columns
         }else{
             selectCardBtn.isHidden = true
             selectedCard.isHidden = true
             return 0
         }
     }
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return rows
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 50, height: 70)
+    }
+    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for:  indexPath) as! CardCellCollectionViewCell
-        if let text = tarjetas?[indexPath.row]{
+        if let text = tarjetas?[cont]{
+            cont += 1
             cell.cardText.text = text
         }
         return cell
