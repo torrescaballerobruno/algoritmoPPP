@@ -13,6 +13,10 @@
 		E1A2D61F23EBB9E700AF3ADA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1A2D61D23EBB9E700AF3ADA /* Main.storyboard */; };
 		E1A2D62123EBB9E900AF3ADA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1A2D62023EBB9E900AF3ADA /* Assets.xcassets */; };
 		E1A2D62423EBB9E900AF3ADA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1A2D62223EBB9E900AF3ADA /* LaunchScreen.storyboard */; };
+		E1A2D62C23ECFCDB00AF3ADA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A2D62B23ECFCDB00AF3ADA /* SettingsViewController.swift */; };
+		E1A2D62F23ED99B200AF3ADA /* UInt128.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A2D62E23ED99B200AF3ADA /* UInt128.swift */; };
+		E1A2D63223EE50F400AF3ADA /* CardGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A2D63123EE50F400AF3ADA /* CardGenerator.swift */; };
+		E1A2D63423EF065100AF3ADA /* CardCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A2D63323EF065000AF3ADA /* CardCellCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		E1A2D62023EBB9E900AF3ADA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E1A2D62323EBB9E900AF3ADA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E1A2D62523EBB9E900AF3ADA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1A2D62B23ECFCDB00AF3ADA /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		E1A2D62E23ED99B200AF3ADA /* UInt128.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UInt128.swift; sourceTree = "<group>"; };
+		E1A2D63123EE50F400AF3ADA /* CardGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGenerator.swift; sourceTree = "<group>"; };
+		E1A2D63323EF065000AF3ADA /* CardCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCellCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +64,35 @@
 		E1A2D61623EBB9E700AF3ADA /* ProyectoPPP */ = {
 			isa = PBXGroup;
 			children = (
+				E1A2D63023ED99D800AF3ADA /* Controllers */,
 				E1A2D61723EBB9E700AF3ADA /* AppDelegate.swift */,
+				E1A2D62D23ED999500AF3ADA /* Utils */,
 				E1A2D61923EBB9E700AF3ADA /* SceneDelegate.swift */,
-				E1A2D61B23EBB9E700AF3ADA /* ViewController.swift */,
 				E1A2D61D23EBB9E700AF3ADA /* Main.storyboard */,
 				E1A2D62023EBB9E900AF3ADA /* Assets.xcassets */,
 				E1A2D62223EBB9E900AF3ADA /* LaunchScreen.storyboard */,
 				E1A2D62523EBB9E900AF3ADA /* Info.plist */,
 			);
 			path = ProyectoPPP;
+			sourceTree = "<group>";
+		};
+		E1A2D62D23ED999500AF3ADA /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E1A2D62E23ED99B200AF3ADA /* UInt128.swift */,
+				E1A2D63123EE50F400AF3ADA /* CardGenerator.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		E1A2D63023ED99D800AF3ADA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E1A2D61B23EBB9E700AF3ADA /* ViewController.swift */,
+				E1A2D62B23ECFCDB00AF3ADA /* SettingsViewController.swift */,
+				E1A2D63323EF065000AF3ADA /* CardCellCollectionViewCell.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,8 +167,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1A2D61C23EBB9E700AF3ADA /* ViewController.swift in Sources */,
+				E1A2D62F23ED99B200AF3ADA /* UInt128.swift in Sources */,
 				E1A2D61823EBB9E700AF3ADA /* AppDelegate.swift in Sources */,
+				E1A2D63223EE50F400AF3ADA /* CardGenerator.swift in Sources */,
+				E1A2D63423EF065100AF3ADA /* CardCellCollectionViewCell.swift in Sources */,
 				E1A2D61A23EBB9E700AF3ADA /* SceneDelegate.swift in Sources */,
+				E1A2D62C23ECFCDB00AF3ADA /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
